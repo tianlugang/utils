@@ -4,8 +4,8 @@
   "description": "my cli utils",
   "license": "MIT",
   "dependencies": {
-    "@tlg/utils": "^1.0.0",
     "@tlg/builder": "^1.0.0",
+    "@tlg/utils": "^1.0.0",
     "commander": "^7.0.0"
   },
   "bin": {

@@ -35,3 +35,4 @@ test-storage*
 node_modules
 .tmp
 examples
+lerna-debug.log
