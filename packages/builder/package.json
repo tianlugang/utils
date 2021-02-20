@@ -1,9 +1,9 @@
 {
   "name": "@tlg/builder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "dependencies": {
-    "@tlg/utils": "^1.0.0",
+    "@tlg/utils": "^1.1.0",
     "download": "^8.0.0",
     "ejs": "^3.1.6",
     "inquirer": "^7.3.3",
