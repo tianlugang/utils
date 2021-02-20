@@ -1,6 +1,6 @@
 {
   "name": "@tlg/utils",
-  "version": "1.1.1-alpha.4+5963000",
+  "version": "1.1.1-alpha.5+5369d6e",
   "description": "my utils",
   "license": "MIT",
   "files": [
@@ -11,6 +11,9 @@
   "main": "lib/node/index.js",
   "browser": {
     "crypto": false
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "api": "api-extractor run --local --verbose",
@@ -28,7 +31,7 @@
     "watch": "tsc --build --watch"
   },
   "devDependencies": {
-    "@tlg/builder": "^1.1.1-alpha.4+5963000",
+    "@tlg/builder": "^1.1.1-alpha.5+5369d6e",
     "@types/chai": "^3.4.35",
     "@types/mocha": "^2.2.39",
     "chai": "^3.5.0",
@@ -48,5 +51,5 @@
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
   },
-  "gitHead": "596300067474b707fe9fa54439138528c1192e53"
+  "gitHead": "5369d6ec138b9a02dbb1f96d5faef391aea015da"
 }

@@ -19,5 +19,8 @@
     "name": "LuGang Tian",
     "email": "541979581@qq.com",
     "url": "http://blog.tianlugang.com"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,9 +1,12 @@
 {
   "name": "@tlg/builder",
-  "version": "1.1.1-alpha.4+5963000",
+  "version": "1.1.1-alpha.5+5369d6e",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@tlg/utils": "^1.1.1-alpha.4+5963000",
+    "@tlg/utils": "^1.1.1-alpha.5+5369d6e",
     "download": "^8.0.0",
     "ejs": "^3.1.6",
     "inquirer": "^7.3.3",
@@ -38,5 +41,5 @@
     "terser": "^4.6.2",
     "typescript": "^4.1.5"
   },
-  "gitHead": "596300067474b707fe9fa54439138528c1192e53"
+  "gitHead": "5369d6ec138b9a02dbb1f96d5faef391aea015da"
 }
