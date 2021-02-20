@@ -1,0 +1,17 @@
+node_modules
+package.json
+npm-debug.log
+###
+bin/**
+
+/.*
+bak.*
+src
+low
+scripts
+./lint-staged.config
+./rollup.config.js
+./typedoc.js
+./tsconfigdoc.json
+./tsconfig.json
+./tsconfig.eslint.json

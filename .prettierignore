@@ -1,0 +1,16 @@
+**/build
+**/node_modules
+**/lib
+**/package.json
+**/static
+tests/**/coverage
+docs
+examples
+tsconfigdoc.json
+
+# jetbrains IDE stuff
+.idea/
+
+# ms IDE stuff
+.history/
+.vscode/

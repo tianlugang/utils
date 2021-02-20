@@ -1,0 +1,21 @@
+{
+    "name": "@writ/utils.${name}",
+    "version": "${version}",
+    "description": ${desc},
+    "keywords": [
+        "javascript",
+        "ecmascript",
+        ${keyword}
+    ],
+    "author": {
+        "name": "tianlugang",
+        "email": "tianlugang0226@gami.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:tianlugang/utils.git"
+    },
+    "dependencies": {},
+    "license": "MIT",
+    "main": "./index.js"
+}

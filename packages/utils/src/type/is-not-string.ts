@@ -1,0 +1,1 @@
+export const isNotString = (any: any) => typeof any !== 'string' || !any.trim()

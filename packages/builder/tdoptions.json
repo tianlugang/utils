@@ -1,0 +1,15 @@
+{
+  "excludeNotExported": true,
+  "mode": "file",
+  "target": "es5",
+  "module": "commonjs",
+  "lib": [
+    "lib.es2015.d.ts",
+    "lib.dom.d.ts"
+  ],
+  "out": "../../doc/builder",
+  "baseUrl": ".",
+  "paths": {
+    "@tlg/*": ["node_modules/@tlg/*"]
+  }
+}

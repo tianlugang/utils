@@ -1,0 +1,22 @@
+**/build
+**/lib
+**/node_modules
+**/mock_packages
+**/static
+**/typings
+**/schemas
+**/themes
+coverage
+*.map.js
+*.bundle.js
+
+doc
+dist
+tsconfigdoc.json
+
+# jetbrains IDE stuff
+.idea/
+
+# ms IDE stuff
+.history/
+.vscode/

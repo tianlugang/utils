@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig",
+    "include": [
+        "packages/**/src/**/*",
+        "packages/**/tests/**/*",
+        "build-utils/**/*",
+        "tests/**/*",
+        "doc/**/*",
+        ".eslintrc.js",
+        "examples/**/*",
+        "scripts/*"
+    ],
+    "exclude": [
+        "./lint-staged.config.js"
+    ]
+}

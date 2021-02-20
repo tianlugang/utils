@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": { 
+    "outDir": "lib",
+    "rootDir": "src",
+    "target": "ES5",
+    "module": "CommonJS",
+    "sourceMap": false,
+    "importHelpers": false
+  },
+  "exclude": [
+    "node_modules",
+    "./lib",
+    "./bin"
+  ],
+  "include": [
+    "src"
+  ]
+}
