@@ -5,7 +5,8 @@ import {
   generateRollupConfig
 } from '@tlg/builder'
 import {
-  NODE_APP_ENVIRONMENT
+  NODE_APP_ENVIRONMENT,
+  directoryExists
 } from '@tlg/util'
 
 const srcDir = path.resolve(__dirname, './src')
@@ -18,19 +19,9 @@ const onlyBrowserModules = [
   'storage',
   'spin'
 ]
-
-function isDirectory(r, p) {
-  p = path.join(r, p)
-
-  try {
-    if (fs.statSync(p).isDirectory()) return p
-  } catch (error) {}
-
-  return
-}
-
-files.forEach(file => {
-  if (isDirectory(srcDir, file)) {
+const createConfig = file => {
+  const absFilePath = path.resolve(srcDir, file)
+  if (directoryExists(absFilePath)) {
     const name = path.basename(file)
     const isBrowserBuilds = onlyBrowserModules.includes(name)
     const config = generateRollupConfig({
@@ -44,8 +35,10 @@ files.forEach(file => {
       isNodeBuilds: false,
       isBrowserBuilds,
       minify: NODE_APP_ENVIRONMENT.isProd, // NODE_APP_ENVIRONMENT.isProd,
-      tsCompilerOptions: {
+      tsCompilerOptions: isBrowserBuilds ? {
         target: "ES5",
+        module: "ESNext"
+      } : {
         module: "ESNext"
       },
       tsDisabled: false
@@ -53,6 +46,8 @@ files.forEach(file => {
 
     configs.push(config)
   }
-})
+}
+
+files.forEach(createConfig)
 
 export default configs

@@ -99,9 +99,8 @@
     "rootDir": "src"
   },
   "exclude": [
-    "./scripts",
-    "./low",
     "node_modules",
+    "./scripts",
     "./lint-staged.config.js"
   ],
   "include": [
