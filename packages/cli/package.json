@@ -1,11 +1,11 @@
 {
   "name": "@tlg/cli",
-  "version": "1.1.1-alpha.5+5369d6e",
+  "version": "1.1.1-alpha.6+92dce48",
   "description": "my cli utils",
   "license": "MIT",
   "dependencies": {
-    "@tlg/builder": "^1.1.1-alpha.5+5369d6e",
-    "@tlg/utils": "^1.1.1-alpha.5+5369d6e",
+    "@tlg/builder": "^1.1.1-alpha.6+92dce48",
+    "@tlg/util": "^1.1.1-alpha.6+92dce48",
     "commander": "^7.0.0"
   },
   "publishConfig": {
@@ -18,5 +18,5 @@
     "build": "tsc --build",
     "clean": "rimraf ./lib && rimraf *.tsbuildinfo && rimraf ./types"
   },
-  "gitHead": "5369d6ec138b9a02dbb1f96d5faef391aea015da"
+  "gitHead": "92dce488efe9873eec3d7123b4072f79e7e99eb1"
 }

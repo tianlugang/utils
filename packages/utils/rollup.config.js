@@ -1,19 +1,16 @@
 // @ts-nocheck
 import fs from 'fs'
 import path from 'path'
-
-const {
-  NODE_APP_ENVIRONMENT
-} = require('@tlg/utils')
-const {
+import {
   generateRollupConfig
-} = require('@tlg/builder')
+} from '@tlg/builder'
+import {
+  NODE_APP_ENVIRONMENT
+} from '@tlg/util'
+
 const srcDir = path.resolve(__dirname, './src')
 const files = fs.readdirSync(srcDir)
 const configs = []
-const onlyNodeModules = [
-  'node'
-]
 const onlyBrowserModules = [
   'bom',
   'dom',
@@ -35,25 +32,23 @@ function isDirectory(r, p) {
 files.forEach(file => {
   if (isDirectory(srcDir, file)) {
     const name = path.basename(file)
-    const isNodeBuilds = onlyNodeModules.includes(name)
     const isBrowserBuilds = onlyBrowserModules.includes(name)
     const config = generateRollupConfig({
       entry: `./src/${name}/index.ts`,
       output: {
         format: isBrowserBuilds ? 'es' : 'cjs',
         file: `./dist/${name}.js`,
-        name: isNodeBuilds ? name : `${name}Util`
+        name: isBrowserBuilds ? `${name}Util` : name
       },
       root: __dirname,
-      isNodeBuilds,
+      isNodeBuilds: false,
       isBrowserBuilds,
-      minify: isNodeBuilds ? false : NODE_APP_ENVIRONMENT.isProd,
-      tsCompilerOptions: isNodeBuilds ? {
-        target: 'ES5',
-        module: 'ESNext'
-      } : {
-        target: "ES6"
-      }
+      minify: NODE_APP_ENVIRONMENT.isProd, // NODE_APP_ENVIRONMENT.isProd,
+      tsCompilerOptions: {
+        target: "ES5",
+        module: "ESNext"
+      },
+      tsDisabled: false
     })
 
     configs.push(config)

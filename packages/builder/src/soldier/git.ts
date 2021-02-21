@@ -1,5 +1,5 @@
 import { spawn } from 'child_process'
-import { logger } from '@tlg/utils/lib/node/logger'
+import { logger } from '@tlg/util'
 
 type IRepo = NonNullable<ReturnType<typeof normalize>>;
 type IValidRepo = IRepo & { url: string }

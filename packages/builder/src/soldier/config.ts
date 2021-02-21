@@ -1,9 +1,7 @@
 import path from 'path'
 import inquirer from 'inquirer'
 import validator from 'validator'
-import { logger, Yaml, configFinder, mkdirp } from '@tlg/utils/lib/node'
-import { colorize } from '@tlg/utils/lib/node/colorize'
-import { directoryExists } from '@tlg/utils/lib/node/fs-utils'
+import { logger, Yaml, configFinder, mkdirp,colorize, directoryExists } from '@tlg/util'
 import { extend } from '@tlg/utils/lib/object/extend'
 import { isEmptyObject } from '@tlg/utils/lib/type/is-empty-object'
 

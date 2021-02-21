@@ -17,6 +17,7 @@
     "./lib"
   ],
   "include": [
-    "src"
+    "src",
+    "@tlg/utils/src"
   ]
 }

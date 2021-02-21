@@ -1,2 +1,6 @@
-#!/usr/bin/env node 
+#!/usr/bin/env node
+
+process.on('unhandledRejection', error => {
+    throw error
+})
 require('../lib')

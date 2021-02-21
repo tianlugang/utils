@@ -1,7 +1,7 @@
 
 import fs, { Mode, NoParamCallback, Stats, BigIntStats, BigIntOptions, StatOptions } from 'fs'
 import path from 'path'
-import { never } from '../base/never'
+import { never } from '@tlg/utils'
 import { isSubdir } from './is-subdir'
 
 type IFilter = {
@@ -118,7 +118,7 @@ function onCopySyncBegin(src: string, dest: string, srcStat: StatsExtra, destSta
 export function copyFileSync(src: string, dest: string, opts: { dereference?: boolean; overwrite?: boolean } = {}) {
     try {
         const { srcStat, destStat } = getStatsSync(src, dest, opts)
-        
+
         cpFileSync(src, dest, srcStat, destStat, opts.overwrite)
     } catch (err) {
         throw err

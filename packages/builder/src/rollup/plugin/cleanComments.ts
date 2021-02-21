@@ -93,7 +93,7 @@ export function cleanComments(options: Partial<ICleanCommentsOptions> = {}) {
     const preserved = options.preserved || ''
 
     return {
-        name: 'clear-comments',
+        name: 'rollup-plugin-clear-comments',
         transform(code: string, id: string) {
             if (!filter(fixId(id))) {
                 return

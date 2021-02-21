@@ -1,5 +1,5 @@
-import { hasOwnProperty } from '@tlg/utils/lib/base'
-import { logger } from '@tlg/utils/lib/node'
+import { logger } from '@tlg/util'
+import { hasOwnProperty } from '@tlg/utils'
 import { configMixed,configMerged, configLoader, configProvider } from './config'
 import project from './project'
 import template from './template'

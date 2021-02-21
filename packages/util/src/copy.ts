@@ -1,9 +1,8 @@
 
 import fs, { Mode, NoParamCallback, Stats, BigIntStats, BigIntOptions, StatOptions, PathLike } from 'fs'
 import path from 'path'
+import { never, noop } from '@tlg/utils'
 import { mkdirp } from './mkdirp'
-import { noop } from '../base/noop'
-import { never } from '../base/never'
 import { isSubdir } from './is-subdir'
 
 type IOptions = Partial<IContext> & StatOptionsExtra | IFilter | NoParamCallback

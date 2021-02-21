@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
+import { returnString } from '@tlg/utils'
 import { fileExists, folderExists } from './fs-utils'
 import { mkdirp } from './mkdirp'
-import { returnString } from '../base/return-string'
 
 const TLG_DIR = '.tlg'
 const XDG_CONFIG_HOME = process.env.XDG_CONFIG_HOME

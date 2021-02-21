@@ -1,0 +1,14 @@
+{
+  "excludeNotExported": true,
+  "mode": "file",
+  "target": "es5",
+  "module": "CommonJS",
+  "lib": [
+    "lib.es2015.d.ts"
+  ],
+  "out": "../../doc/utilsn",
+  "baseUrl": ".",
+  "paths": {
+    "@tlg/*": ["node_modules/@tlg/*"]
+  }
+}

@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { logger } from '@tlg/utils'
+import { logger } from '@tlg/util'
 import { resolveProj } from '../projrc' 
 import { execScript, pushDir } from './ssh'
 

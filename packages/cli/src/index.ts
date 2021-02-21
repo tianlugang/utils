@@ -1,11 +1,8 @@
 import commander from 'commander'
-import { logger } from '@tlg/utils'
+import { logger } from '@tlg/util'
 import { deployer, soldierConfigMerged, soldier, toy } from '@tlg/builder'
-import pkgJson from '../package.json'
 
-process.on('unhandledRejection', error => {
-    throw error
-})
+const pkgJson = require('../package.json')
 
 logger.setup(loggerOption => {
     soldierConfigMerged(loggerOption)

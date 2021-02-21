@@ -1,6 +1,6 @@
 {
   "name": "@tlg/utils",
-  "version": "1.1.1-alpha.5+5369d6e",
+  "version": "1.1.1-alpha.6+92dce48",
   "description": "my utils",
   "license": "MIT",
   "files": [
@@ -8,7 +8,7 @@
     "dist/*",
     "types/*"
   ],
-  "main": "lib/node/index.js",
+  "main": "lib/base",
   "browser": {
     "crypto": false
   },
@@ -17,7 +17,6 @@
   },
   "scripts": {
     "api": "api-extractor run --local --verbose",
-    "lib": "tsc --build",
     "build": "tsc --build && rollup -c",
     "build:test": "tsc --build tests",
     "clean": "rimraf ./lib && rimraf *.tsbuildinfo && rimraf ./types && rimraf ./dist",
@@ -31,7 +30,8 @@
     "watch": "tsc --build --watch"
   },
   "devDependencies": {
-    "@tlg/builder": "^1.1.1-alpha.5+5369d6e",
+    "@tlg/builder": "^1.1.1-alpha.6+92dce48",
+    "@tlg/util": "^1.1.1-alpha.6+92dce48",
     "@types/chai": "^3.4.35",
     "@types/mocha": "^2.2.39",
     "chai": "^3.5.0",
@@ -42,14 +42,8 @@
     "karma-mocha": "^1.3.0",
     "karma-mocha-reporter": "^2.2.2",
     "mocha": "^6.2.2",
-    "rimraf": "^2.5.2",
-    "rollup": "^2.22.1",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-sourcemaps": "^0.5.0",
-    "tslib": "1.10.0",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
   },
-  "gitHead": "5369d6ec138b9a02dbb1f96d5faef391aea015da"
+  "gitHead": "92dce488efe9873eec3d7123b4072f79e7e99eb1"
 }

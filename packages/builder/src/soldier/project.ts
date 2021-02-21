@@ -6,10 +6,8 @@ import validator from 'validator'
 import symbols from 'log-symbols'
 import downloadURL from 'download'
 import rimraf from 'rimraf'
+import { logger, copySync, directoryExists, fileExists, colorize } from '@tlg/util'
 import { hasOwnProperty } from '@tlg/utils/lib/base'
-import { logger, copySync } from '@tlg/utils/lib/node'
-import { directoryExists, fileExists } from '@tlg/utils/lib/node/fs-utils'
-import { colorize } from '@tlg/utils/lib/node/colorize'
 import { isObject } from '@tlg/utils/lib/type/is-object'
 import { resolveProj } from '../projrc'
 import { configProvider, configInit } from './config'
@@ -48,7 +46,7 @@ const baseDownloadOptions = {
 
 const project = {
   clone(url: string, dest: string, opts?: Parameters<typeof git.clone>[2]) {
-    return new Promise((resolve, reject) => {
+    return new Promise<unknown>((resolve, reject) => {
       git.clone(url, dest, opts, err => {
         if (err) {
           if (git.isEasyError(err)) {
@@ -58,7 +56,7 @@ const project = {
           return reject(err)
         }
 
-        resolve()
+        resolve(null)
       })
     })
   },
@@ -76,7 +74,7 @@ const project = {
 
   copyLocal(src: string, dest: string) {
     logger.info(null, `Copy Project from local boilerplate. It is in (${src}).`);
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       const ingore = /(node_modules)/
       const filter = (name: string) => ingore.test(name)
 

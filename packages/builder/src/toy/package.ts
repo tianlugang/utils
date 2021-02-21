@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { hasOwnProperty } from '@tlg/utils/lib/base'
-import { logger } from '@tlg/utils'
+import { hasOwnProperty } from '@tlg/utils'
+import { logger } from '@tlg/util'
 import { configProvider } from '../soldier/config'
 
 const fixPackageName = (name: string) => {

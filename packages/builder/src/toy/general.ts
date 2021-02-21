@@ -1,7 +1,6 @@
-import { existsSync } from 'fs' 
+import { existsSync } from 'fs'
 import path from 'path'
-import { logger } from '@tlg/utils'
-import { getSRCByCwd } from '@tlg/utils'
+import { logger, getSRCByCwd } from '@tlg/util'
 import { resolveProj } from '../projrc'
 import generator from './generator'
 

@@ -1,7 +1,7 @@
 
 import chalk from 'chalk'
 import inquirer from 'inquirer'
-import { logger } from '@tlg/utils/lib/node'
+import { logger } from '@tlg/util'
 import { configProvider, configMixed } from './config'
 
 const util = {

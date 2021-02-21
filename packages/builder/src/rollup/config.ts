@@ -1,7 +1,7 @@
 import path from 'path'
 import { OutputOptions } from 'rollup'
-import { NODE_APP_ENVIRONMENT } from '@tlg/utils'
-import cleanComments from './plugin/cleanComments'
+import { NODE_APP_ENVIRONMENT } from '@tlg/util'
+import { cleanComments } from './plugin/cleanComments'
 
 const resolve = (root: string, ...args: string[]) => path.resolve(root, ...args)
 
@@ -22,6 +22,10 @@ const setOutputBanner = (pkg: Record<string, any>) => {
   }
 }
 
+const filterInvalidPlugin = (plugin: any[]) => {
+  return plugin.filter(v => !!v)
+}
+
 type ReplacementJSON = Record<string, string | boolean | number | symbol>
 type IGenerateConfigOptions = {
   entry: string
@@ -31,6 +35,7 @@ type IGenerateConfigOptions = {
   minify?: boolean
   tsConfig?: any
   tsCompilerOptions?: any
+  tsDisabled?: boolean
   isBrowserBuilds?: boolean
   isNodeBuilds?: boolean
   replacement?: ReplacementJSON
@@ -44,8 +49,10 @@ export const generateConfig = ({
   minify = false,
   tsConfig,
   tsCompilerOptions,
+  tsDisabled,
   isNodeBuilds,
-  replacement
+  replacement,
+
   // isBrowserBuilds
 }: IGenerateConfigOptions) => {
   const json = require('@rollup/plugin-json')
@@ -106,21 +113,32 @@ export const generateConfig = ({
     nodeResolve(
       { jsnext: true, preferBuiltins: true, }
     ),
-    commonjs({ include: "node_modules/**", }),
-    typescript({
-      check: true,
-      tsconfig: resolve(root, 'tsconfig.json'),
-      cacheRoot: resolve(root, 'node_modules/.rts2_cache'),
-      tsconfigOverride: Object.assign({
-        compilerOptions: Object.assign({
-          sourceMap: false,
-          declaration: true,
-          declarationMap: true,
-          importHelpers: false
-        }, tsCompilerOptions)
-      }, tsConfig)
-    }),
-    ...plugins,
+    commonjs({ include: "node_modules/**", })
+  )
+  
+  if (!tsDisabled) {
+    usedPlugins.push(
+      typescript({
+        check: true,
+        tsconfig: resolve(root, 'tsconfig.json'),
+        cacheRoot: resolve(root, 'node_modules/.rts2_cache'),
+        tsconfigOverride: Object.assign({
+          compilerOptions: Object.assign({
+            importHelpers: false,
+            sourceMap: false,
+            declaration: true,
+            declarationMap: true,
+          }, tsCompilerOptions)
+        }, tsConfig)
+      })
+    )
+  }
+
+  if (plugins.length) {
+    usedPlugins.push(...filterInvalidPlugin(plugins))
+  }
+
+  usedPlugins.push(
     cleanComments({
       include: /tslib/,
     })
