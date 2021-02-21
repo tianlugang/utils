@@ -7,7 +7,7 @@
     "lib.es2015.d.ts",
     "lib.dom.d.ts"
   ],
-  "out": "../../doc/builder",
+  "out": "../../docs/builder",
   "baseUrl": ".",
   "paths": {
     "@tlg/*": ["node_modules/@tlg/*"]

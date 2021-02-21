@@ -6,7 +6,7 @@
   "lib": [
     "lib.es2015.d.ts"
   ],
-  "out": "../../doc/utilsn",
+  "out": "../../docs/util",
   "baseUrl": ".",
   "paths": {
     "@tlg/*": ["node_modules/@tlg/*"]
